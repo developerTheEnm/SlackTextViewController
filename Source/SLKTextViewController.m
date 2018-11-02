@@ -319,6 +319,7 @@ CGFloat const SLKAutoCompletionViewDefaultHeight = 140.0;
         _textInputbar.translatesAutoresizingMaskIntoConstraints = NO;
         
         [_textInputbar.leftButton addTarget:self action:@selector(didPressLeftButton:) forControlEvents:UIControlEventTouchUpInside];
+        [_textInputbar.middleButton addTarget:self action:@selector(didPressMiddleButton:) forControlEvents:UIControlEventTouchUpInside];
         [_textInputbar.rightButton addTarget:self action:@selector(didPressRightButton:) forControlEvents:UIControlEventTouchUpInside];
         [_textInputbar.editorLeftButton addTarget:self action:@selector(didCancelTextEditing:) forControlEvents:UIControlEventTouchUpInside];
         [_textInputbar.editorRightButton addTarget:self action:@selector(didCommitTextEditing:) forControlEvents:UIControlEventTouchUpInside];
@@ -373,6 +374,11 @@ CGFloat const SLKAutoCompletionViewDefaultHeight = 140.0;
 - (UIButton *)leftButton
 {
     return _textInputbar.leftButton;
+}
+
+- (UIButton *)middleButton
+{
+    return _textInputbar.middleButton;
 }
 
 - (UIButton *)rightButton
@@ -759,6 +765,11 @@ CGFloat const SLKAutoCompletionViewDefaultHeight = 140.0;
 }
 
 - (void)didPressLeftButton:(id)sender
+{
+    // No implementation here. Meant to be overriden in subclass.
+}
+
+- (void)didPressMiddleButton:(id)sender
 {
     // No implementation here. Meant to be overriden in subclass.
 }
